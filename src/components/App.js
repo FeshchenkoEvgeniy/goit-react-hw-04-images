@@ -15,8 +15,6 @@ export default function App() {
   const [page, setPage] = useState(0);
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  // eslint-disable-next-line
-  const [error, setError] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [largeImage, setLargeImage] = useState('');
 
@@ -56,7 +54,7 @@ export default function App() {
         setIsLoading(false);
       });
     } catch (error) {
-      setError(error);
+      toast.error(`${error}`);
       setIsLoading(false);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
